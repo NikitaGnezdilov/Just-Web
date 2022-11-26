@@ -141,13 +141,7 @@ html {
   display: inline-block;
   width: 10.5rem;
   height: 10.5rem;
-
-  background: linear-gradient(
-    131.34deg,
-    rgba(0, 0, 0, 0.54) -30.29%,
-    #63327d 45.76%
-  );
-
+  background: linear-gradient(131.34deg, #000000 -30.29%, #63327D 45.76%);
   border-bottom-right-radius: 90%;
   z-index: 2;
 }
@@ -158,9 +152,9 @@ html {
   left: 0;
   top: 0;
   position: relative;
-  display: inline-block;
-  width: 10.5rem;
-  height: 10.5rem;
+  display: flex;
+  width: 0rem;
+  height: 0rem;
   transition: all 500ms ease;
   
   visibility: hidden;
@@ -178,51 +172,77 @@ html {
   visibility: visible;
   transition: all 500ms ease;
 }
-
-.hamb {
-  position: absolute;
-  left: 2rem;
-  top: 2rem;
-}
-
-.stripes:hover {
-
+.moon__points {
   cursor: pointer;
 }
+.options {
+  position:absolute;
+  margin: 0 auto;
+  
+  display: flex;
+  width: 3rem;
+  height: 3rem;
+  right: 0;
+  top: 0;
+  mix-blend-mode: luminosity;
+  background: url(/src/img__loading/a3c95a45d62d447a0413e33bb74911c0\ 1.png) no-repeat;
+}
+.options:hover {
+  filter: drop-shadow(2px 4px 3px #FFFFFF) ;
+}
+.mail {
+
+}
+
+.profile {
+
+}
+
+/* Гамбургер */
+.hamb {
+  position: absolute;
+  display: block;
+  left: 2rem;
+  top: 2rem;
+  width: 3rem;
+  height: 0.6rem;
+
+  
+  cursor: pointer;
+}
+
+
+
+
 .stripes {
+  position: absolute;
   display: inline-block;
-  background-color:rgba(0, 0, 0, 0.54);
   width: 4rem;
   height: 0.6rem; 
+  margin: 0 auto;
+
 }
 .top__stripe,
 .middle__stripe,
 .buttom__stripe {
-  position: relative;
   margin-bottom: 0.5rem;
   width: 2.5rem;
   height: 0.125rem;
   background: #d9d9d9;
   transition: 0.5s;
-
 }
 
 .stripes._active .middle__stripe{
 opacity: 0;
-transition: 0.5s;
 }
 
 .stripes._active .top__stripe {
-  transition: 0.5s;
-  transform: rotate(45deg);
-  transform: scaleY(-3px);
+  transform: translateY(0.5rem) rotate(45deg);
   margin-bottom: 0;
 }
 
 .stripes._active .buttom__stripe {
-  transition: 0.5s;
-  transform: rotate(-45deg);
-  transform: scaleY(3px);
+  transform: translateY(-0.25rem) rotate(-45deg);
   margin-bottom: 0;
 }
 
