@@ -152,7 +152,6 @@ html {
   left: 0;
   top: 0;
   position: relative;
-  display: flex;
   width: 0rem;
   height: 0rem;
   transition: all 500ms ease;
@@ -165,13 +164,14 @@ html {
 /* Открытый гамбургер */
 .open__moon._active {
   position: relative;
+
   width: 239px;
   height: 250px;
 
   transform: translate(0px, 0px);
   background: linear-gradient(132.5deg, hsl(279, 46%, 25%), 46%, 25%) 41.09%, #000000 107.51%;
   box-shadow: 0px 5px 26px rgba(0, 0, 0, 0.25);
-  border-radius: 0px 0px 2792px 0px;
+  border-radius: 0px 0px 360px 0px;
   visibility: visible;
   transition: all 500ms ease;
 }
@@ -181,75 +181,93 @@ html {
   transform-origin: 100% 26px;
 }
 .options {
-  position:relative;
-  display: flex;
   width: 3rem;
   height: 3rem;
-  right: 0;
-  top: 0;
+
   mix-blend-mode: luminosity;
   background: url(/src/img__loading/a3c95a45d62d447a0413e33bb74911c0\ 1.png) no-repeat;
-  margin-top: 0;
+  
 }
 .options:hover {
-  filter: drop-shadow(2px 4px 3px #FFFFFF) ;
+  filter: drop-shadow(2px 4px 3px #FFFFFF);
 }
 .mail {
 
+  width: 3rem;
+  height: 3rem;
+  
+  mix-blend-mode: luminosity;
+  transform: rotate(-46.55deg);
+  background: url(/src/img__loading/4c9a1cd159a5113c25fb2c629fb7091e\ 1.png) no-repeat;
 }
 
-.profile {
+.mail:hover {
 
 }
 
 /* Гамбургер */
 .hamb {
-  position: absolute;
-  display: block;
-  left: 2rem;
-  top: 2rem;
-  width: 3rem;
-  height: 0.6rem;
-
-  
   cursor: pointer;
+  margin: 0;
+  width: 2rem;
+  height: 1rem;
+  position: relative;
+  left: 1rem;
+  top: 1rem;
+  z-index: 10;
 }
-
-
-
-
-.stripes {
+.hamb::before,
+.hamb::after {
+  content: "";
   position: absolute;
-  display: inline-block;
-  width: 4rem;
-  height: 0.6rem; 
-  margin: 0 auto;
-
-}
-.top__stripe,
-.middle__stripe,
-.buttom__stripe {
-  margin-bottom: 0.5rem;
-  width: 2.5rem;
-  height: 0.125rem;
-  background: #d9d9d9;
-  transition: 0.5s;
+  height: 0.15rem;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  background-color: #fff;
 }
 
-.stripes._active .middle__stripe{
-opacity: 0;
+.hamb::before {
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
-.stripes._active .top__stripe {
-  transform: translateY(0.5rem) rotate(45deg);
-  margin-bottom: 0;
+.hamb::after {
+  bottom: 0;
+  right: 0;
+  width: 100%;
 }
 
-.stripes._active .buttom__stripe {
-  transform: translateY(-0.25rem) rotate(-45deg);
-  margin-bottom: 0;
+.hamb span {
+  position: absolute;
+  top: 7px;
+  width: 100%;
+  height: 2px;
+  transition: all ease 0.5s;
+  right: 0;
+  background-color: #fff;
 }
 
+.hamb.active span {
+  opacity: 0;
+  transition: all ease 0.5s;
+}
+
+.hamb.active::after {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  bottom: 3px;
+  width: 100%;
+}
+
+.hamb.active::before {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: 10px;
+}
 /* Левая панелька - sidebar */
 .sidebar {
   max-width: 22%;

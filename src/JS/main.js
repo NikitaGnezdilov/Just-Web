@@ -1,8 +1,7 @@
-const hamb = document.querySelector('#moon1'),
-      openMoon = document.querySelector('#moon2');
+const hamb = document.querySelector("#hamb"),
+  openMoon = document.querySelector("#moon2");
 
-hamb.addEventListener('click', function () {
-    openMoon.classList.toggle('_active');
-    hamb.classList.toggle('_active');
+hamb.addEventListener("click", function () {
+  openMoon.classList.toggle("_active");
+  hamb.classList.toggle("active");
 });
-
