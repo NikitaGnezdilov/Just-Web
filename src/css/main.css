@@ -158,6 +158,9 @@ html {
   transition: all 500ms ease;
   
   visibility: hidden;
+
+  justify-content: center;
+  align-items: center;
 }
 /* Открытый гамбургер */
 .open__moon._active {
@@ -166,7 +169,7 @@ html {
   height: 250px;
 
   transform: translate(0px, 0px);
-  background: linear-gradient(132.5deg, #63327D 41.09%, #000000 107.51%);
+  background: linear-gradient(132.5deg, hsl(279, 46%, 25%), 46%, 25%) 41.09%, #000000 107.51%;
   box-shadow: 0px 5px 26px rgba(0, 0, 0, 0.25);
   border-radius: 0px 0px 2792px 0px;
   visibility: visible;
@@ -174,11 +177,11 @@ html {
 }
 .moon__points {
   cursor: pointer;
+  position: absolute;
+  transform-origin: 100% 26px;
 }
 .options {
-  position:absolute;
-  margin: 0 auto;
-  
+  position:relative;
   display: flex;
   width: 3rem;
   height: 3rem;
@@ -186,6 +189,7 @@ html {
   top: 0;
   mix-blend-mode: luminosity;
   background: url(/src/img__loading/a3c95a45d62d447a0413e33bb74911c0\ 1.png) no-repeat;
+  margin-top: 0;
 }
 .options:hover {
   filter: drop-shadow(2px 4px 3px #FFFFFF) ;
