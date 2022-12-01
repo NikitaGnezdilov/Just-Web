@@ -3,7 +3,6 @@
   padding: 0;
   margin: 0;
   border: 0;
-
 }
 
 *,
@@ -92,117 +91,98 @@ h6 {
   font-weight: 400;
 }
 
-
 /* --------------------------------------------------------------------------------------------------------------- */
 
 html {
-  font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* вся оболчка внешняя */
-.wrapper {
-  background: #331A38;
+body {
+  font-size: calc(100vw / 768 * 10);
+  background: #331a38;
 }
 
-
-
-/* .back__loading  {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.wrapper{
+  display: flex;
+  min-height: 100%;
 }
-.logo__main {
-    position: absolute;
-    max-width: 40rem;
-    max-height: 40rem;
-    
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);   
-} */
-
-/* .white__stripe {
-    position: absolute;
-
-    background: rgba(115, 76, 136, 0.57);
-    opacity: 0.8;
-    
-    width: 100%;
-    height: 100%;
-    max-width: 1920px;
-    max-height: 35px;
-} */
-
 
 .moon {
-  position: absolute;
+  position: fixed;
+  left: 0;
+  top: 0;
   display: inline-block;
   width: 10.5rem;
   height: 10.5rem;
-  background: linear-gradient(131.34deg, #000000 -30.29%, #63327D 45.76%);
+  background: linear-gradient(131.34deg, #000000 -30.29%, #63327d 45.76%);
   border-bottom-right-radius: 90%;
   z-index: 2;
 }
 
 .open__moon {
-  background: linear-gradient(132.5deg, #63327D 41.09%, #000000 107.51%);
+  background: linear-gradient(132.5deg, #63327d 41.09%, #000000 107.51%);
   box-shadow: 0px 5px 26px rgba(0, 0, 0, 0.25);
   border-bottom-right-radius: 90%;
-  left: 0;
-  top: 0;
   position: relative;
-  display: flex;
-  width: 0rem;
-  height: 0rem;
+  width: 0;
+  height: 0;
   transition: all 500ms ease;
-
-  visibility: hidden;
 }
-
 /* Открытый гамбургер */
-.open__moon._active {
-  position: relative;
+.open__moon.active {
   width: 239px;
   height: 250px;
-
   transform: translate(0px, 0px);
-  background: linear-gradient(132.5deg, #63327D 41.09%, #000000 107.51%);
+  background: linear-gradient(132.5deg, hsl(279, 46%, 25%), 46%, 25%) 41.09%,
+    #000000 107.51%;
   box-shadow: 0px 5px 26px rgba(0, 0, 0, 0.25);
-  border-radius: 0px 0px 2792px 0px;
-  visibility: visible;
+  border-radius: 0px 0px 360px 0px;
   transition: all 500ms ease;
 }
+.open__moon.active div {
+  display: block;
+}
 
-.moon__points {
+.open__moon div {
+  display: none;
   cursor: pointer;
 }
 
-.options {
+.open__moon div:hover {
+  filter: drop-shadow(0px 0px 1.5px #ffffff);
+}
+
+.settings {
   position: absolute;
-  margin: 0 auto;
-
-  display: flex;
-  width: 3rem;
-  height: 3rem;
-  right: 0;
-  top: 0;
-  mix-blend-mode: luminosity;
-  background: url(/src/img__loading/a3c95a45d62d447a0413e33bb74911c0\ 1.png) no-repeat;
+  z-index: 3;
+  width: 2.5rem;
+  right: 10%;
+  top: 10%;
+  height: 2.5rem;
+  background: url(../img__loading/settings.png) 0 0 / contain no-repeat;
 }
 
-.options:hover {
-  filter: drop-shadow(2px 4px 3px #FFFFFF);
+.mail {
+  position: absolute;
+  z-index: 3;
+  width: 2.5rem;
+  right: 30%;
+  top: 50%;
+  height: 2.5rem;
+  background: url(../img__loading/mail.png) 0 0 / contain no-repeat;
 }
 
-.mail {}
-
-.profile {}
+.profile {
+  position: absolute;
+  z-index: 3;
+  width: 2.5rem;
+  left: 10%;
+  top: 75%;
+  height: 2.5rem;
+  background: url(../img__loading/profile.png) 0 0 / contain no-repeat;
+}
 
 /* Гамбургер */
-
-
 .hamb {
   cursor: pointer;
   margin: 0;
@@ -213,15 +193,14 @@ html {
   top: 1rem;
   z-index: 10;
 }
-
 .hamb::before,
 .hamb::after {
   content: "";
   position: absolute;
-  height: 2px;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  height: 0.15rem;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   background-color: #fff;
 }
 
@@ -239,22 +218,24 @@ html {
 
 .hamb span {
   position: absolute;
-  top: 7px;
+  top: 6px;
   width: 100%;
   height: 2px;
+  transition: all ease 0.5s;
   right: 0;
   background-color: #fff;
 }
 
 .hamb.active span {
-  display: none;
+  opacity: 0;
+  transition: all ease 0.5s;
 }
 
 .hamb.active::after {
   -webkit-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  bottom: 5px;
+  bottom: 3px;
   width: 100%;
 }
 
@@ -262,22 +243,28 @@ html {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-  top: 9px;
+  top: 10px;
 }
-
 /* Левая панелька - sidebar */
 .sidebar {
   max-width: 22%;
-  min-height: 100vh;
+  flex: 0 1 22%;
+  min-height: 100%;
   border-top-right-radius: 110px;
-  background: #734c88 url('../img__loading/JW logo new.png') 85% 3% / 8rem no-repeat;
+  background: #734c88 url("../img__loading/JW logo new.png") 85% 3% / 8rem
+    no-repeat;
   font-size: 16px;
   color: #fff;
 }
 
 /* Список чатов */
 .chat {
-  margin-top: 10rem;
+  margin-top: 11rem;
+  transition: all 0.3s ease;
+}
+
+.chat.scrolled{
+  margin-top: 0;
 }
 
 /* Один конкретный чат */
