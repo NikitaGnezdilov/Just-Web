@@ -3,7 +3,6 @@
   padding: 0;
   margin: 0;
   border: 0;
-  
 }
 
 *,
@@ -92,117 +91,95 @@ h6 {
   font-weight: 400;
 }
 
-
 /* --------------------------------------------------------------------------------------------------------------- */
 
 html {
-    font-size: 16px; 
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* вся оболчка внешняя */
-.wrapper {
-  background: #331A38;
+body {
+  font-size: calc(100vw / 768 * 10);
+  background: #331a38;
 }
 
-
-
-/* .back__loading  {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.wrapper{
+  display: flex;
+  min-height: 100%;
 }
-.logo__main {
-    position: absolute;
-    max-width: 40rem;
-    max-height: 40rem;
-    
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);   
-} */
-
-/* .white__stripe {
-    position: absolute;
-
-    background: rgba(115, 76, 136, 0.57);
-    opacity: 0.8;
-    
-    width: 100%;
-    height: 100%;
-    max-width: 1920px;
-    max-height: 35px;
-} */
-
 
 .moon {
-  position: absolute;
+  position: fixed;
+  left: 0;
+  top: 0;
   display: inline-block;
   width: 10.5rem;
   height: 10.5rem;
-  background: linear-gradient(131.34deg, #000000 -30.29%, #63327D 45.76%);
+  background: linear-gradient(131.34deg, #000000 -30.29%, #63327d 45.76%);
   border-bottom-right-radius: 90%;
   z-index: 2;
 }
+
 .open__moon {
-  background: linear-gradient(132.5deg, #63327D 41.09%, #000000 107.51%);
+  background: linear-gradient(132.5deg, #63327d 41.09%, #000000 107.51%);
   box-shadow: 0px 5px 26px rgba(0, 0, 0, 0.25);
   border-bottom-right-radius: 90%;
-  left: 0;
-  top: 0;
   position: relative;
-  width: 0rem;
-  height: 0rem;
+  width: 0;
+  height: 0;
   transition: all 500ms ease;
-  
-  visibility: hidden;
-
-  justify-content: center;
-  align-items: center;
 }
 /* Открытый гамбургер */
-.open__moon._active {
-  position: relative;
-
+.open__moon.active {
   width: 239px;
   height: 250px;
-
   transform: translate(0px, 0px);
-  background: linear-gradient(132.5deg, hsl(279, 46%, 25%), 46%, 25%) 41.09%, #000000 107.51%;
+  background: linear-gradient(132.5deg, hsl(279, 46%, 25%), 46%, 25%) 41.09%,
+    #000000 107.51%;
   box-shadow: 0px 5px 26px rgba(0, 0, 0, 0.25);
   border-radius: 0px 0px 360px 0px;
-  visibility: visible;
   transition: all 500ms ease;
 }
-.moon__points {
+.open__moon.active div {
+  display: block;
+}
+
+.open__moon div {
+  display: none;
   cursor: pointer;
+}
+
+.open__moon div:hover {
+  filter: drop-shadow(0px 0px 1.5px #ffffff);
+}
+
+.settings {
   position: absolute;
-  transform-origin: 100% 26px;
+  z-index: 3;
+  width: 2.5rem;
+  right: 10%;
+  top: 10%;
+  height: 2.5rem;
+  background: url(../img__loading/settings.png) 0 0 / contain no-repeat;
 }
-.options {
-  width: 3rem;
-  height: 3rem;
 
-  mix-blend-mode: luminosity;
-  background: url(/src/img__loading/a3c95a45d62d447a0413e33bb74911c0\ 1.png) no-repeat;
-  
-}
-.options:hover {
-  filter: drop-shadow(2px 4px 3px #FFFFFF);
-}
 .mail {
-
-  width: 3rem;
-  height: 3rem;
-  
-  mix-blend-mode: luminosity;
-  transform: rotate(-46.55deg);
-  background: url(/src/img__loading/4c9a1cd159a5113c25fb2c629fb7091e\ 1.png) no-repeat;
+  position: absolute;
+  z-index: 3;
+  width: 2.5rem;
+  right: 30%;
+  top: 50%;
+  height: 2.5rem;
+  background: url(../img__loading/mail.png) 0 0 / contain no-repeat;
 }
 
-.mail:hover {
-
+.profile {
+  position: absolute;
+  z-index: 3;
+  width: 2.5rem;
+  left: 10%;
+  top: 75%;
+  height: 2.5rem;
+  background: url(../img__loading/profile.png) 0 0 / contain no-repeat;
 }
 
 /* Гамбургер */
@@ -241,7 +218,7 @@ html {
 
 .hamb span {
   position: absolute;
-  top: 7px;
+  top: 6px;
   width: 100%;
   height: 2px;
   transition: all ease 0.5s;
@@ -271,44 +248,51 @@ html {
 /* Левая панелька - sidebar */
 .sidebar {
   max-width: 22%;
-  min-height: 100vh;
+  flex: 0 1 22%;
+  min-height: 100%;
   border-top-right-radius: 110px;
-  background: #734c88 url('../img__loading/JW logo new.png') 85% 3% / 8rem no-repeat;
+  background: #734c88 url("../img__loading/JW logo new.png") 85% 3% / 8rem
+    no-repeat;
   font-size: 16px;
   color: #fff;
 }
 
 /* Список чатов */
-.chat{
-    margin-top: 2rem;
+.chat {
+  margin-top: 11rem;
+  transition: all 0.3s ease;
+}
+
+.chat.scrolled{
+  margin-top: 0;
 }
 
 /* Один конкретный чат */
-.chat__item{
-    display: flex;
-    padding: 20px 15px;
-    gap: 1rem;
-    cursor: pointer;
+.chat__item {
+  display: flex;
+  padding: 20px 15px;
+  gap: 1rem;
+  cursor: pointer;
 }
 
-.chat__item:hover{
-    background-color: #ab84c08f;
+.chat__item:hover {
+  background-color: #ab84c08f;
 }
 
-.chat__avatar{
-    flex: 0 1 3.125rem;
-    border-radius: 50%;
-    height: 3.125rem;
-    width: 3.125rem;
-    background-color: rgb(0, 229, 255);
+.chat__avatar {
+  flex: 0 1 3.125rem;
+  border-radius: 50%;
+  height: 3.125rem;
+  width: 3.125rem;
+  background-color: rgb(0, 229, 255);
 }
 
-.chat__body{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.chat__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.chat__username{
-    font-weight: 700;
+.chat__username {
+  font-weight: 700;
 }
