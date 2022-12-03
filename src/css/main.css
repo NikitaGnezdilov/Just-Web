@@ -3,7 +3,6 @@
   padding: 0;
   margin: 0;
   border: 0;
-  
 }
 
 *,
@@ -98,8 +97,12 @@ h6 {
 html {
     font-size: 16px; 
     font-family: Arial, Helvetica, sans-serif;
+    
 }
-
+body {
+  font-size: calc(100vw / 768 * 10);
+  background: #331a38;
+}
 /* вся оболчка внешняя */
 .wrapper {
   background: #331A38;
@@ -165,8 +168,8 @@ html {
 .open__moon._active {
   position: relative;
 
-  width: 239px;
-  height: 250px;
+  width: 23rem;
+  height: 25rem;
 
   transform: translate(0px, 0px);
   background: linear-gradient(132.5deg, hsl(279, 46%, 25%), 46%, 25%) 41.09%, #000000 107.51%;
@@ -177,12 +180,13 @@ html {
 }
 .moon__points {
   cursor: pointer;
-  position: absolute;
-  transform-origin: 100% 26px;
+  position: relative;
+  display: inline-block;
 }
 .options {
   width: 3rem;
   height: 3rem;
+
 
   mix-blend-mode: luminosity;
   background: url(/src/img__loading/a3c95a45d62d447a0413e33bb74911c0\ 1.png) no-repeat;
