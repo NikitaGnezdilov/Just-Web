@@ -105,6 +105,8 @@ body {
 }
 /* вся оболчка внешняя */
 .wrapper {
+  font-size: calc(100vw / 768 * 10);
+  background: #331a38;
   background: #331A38;
 }
 
@@ -140,13 +142,15 @@ body {
 
 
 .moon {
-  position: absolute;
+  position: fixed;
   display: inline-block;
+  left: 0;
+  top: 0;
   width: 10.5rem;
   height: 10.5rem;
   background: linear-gradient(131.34deg, #000000 -30.29%, #63327D 45.76%);
   border-bottom-right-radius: 90%;
-  z-index: 2;
+  transition: all 500ms ease;
 }
 .open__moon {
   background: linear-gradient(132.5deg, #63327D 41.09%, #000000 107.51%);
