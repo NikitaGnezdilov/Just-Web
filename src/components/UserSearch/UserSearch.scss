@@ -1,0 +1,14 @@
+.userSearch{
+	color: #fff;
+	input{
+		background: transparent;
+		width: 100%;
+		padding: 5px 10px;
+		border-radius: 0.5rem;
+		border: 1px solid #000;
+		color: inherit;
+		&::placeholder{
+			color: rgba(255, 255, 255, 0.505);
+		}
+	}
+}

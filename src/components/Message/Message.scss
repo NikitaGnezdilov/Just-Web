@@ -1,0 +1,46 @@
+.message {
+  display: flex;
+  margin-bottom: 2rem;
+  gap: 2rem;
+  align-items: flex-start;
+  &__user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    & img {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+  &__content {
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    p {
+      background-color: #5a2972;
+      padding: 0.5rem;
+      line-height: 150%;
+      border-radius: 0px 1rem 1rem 1rem;
+      max-width: max-content;
+    }
+    img {
+      width: 30%;
+    }
+  }
+
+  &.owner {
+    flex-direction: row-reverse;
+
+    .message__content {
+      align-items: flex-end;
+      p {
+        background-color: #b25edc;
+        border-radius: 1rem 0 1rem 1rem;
+      }
+    }
+  }
+}

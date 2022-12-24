@@ -1,0 +1,25 @@
+.chat {
+  flex: 8;
+  &__info {
+    padding: 1rem;
+    display: flex;
+    height: 5rem;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(131.34deg, #2e003d -30.29%, #63327d 45.76%);
+  }
+  &__buttons {
+    display: flex;
+	gap: 1rem;
+    button {
+      width: 2rem;
+      height: 2rem;
+      background: none;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+}

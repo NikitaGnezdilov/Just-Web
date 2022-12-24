@@ -5,7 +5,9 @@ type Props = {}
 
 const UserSearch = (props: Props) => {
   return (
-	<div>UserSearch</div>
+	<div className='userSearch'>
+    <input type="text" placeholder='Найти пользователя'/>
+  </div>
   )
 }
 

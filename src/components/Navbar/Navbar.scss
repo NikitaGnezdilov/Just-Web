@@ -1,0 +1,64 @@
+.navbar {
+	background: url('../../assets/jw-logo.png') right / 50% no-repeat;
+  &__moon {
+    display: inline-block;
+    width: 10.5rem;
+    height: 10.5rem;
+	position: relative;
+    background: linear-gradient(131.34deg, #000000 -30.29%, #63327d 45.76%);
+    border-bottom-right-radius: 90%;
+    z-index: 2;
+  }
+  &__open-moon {
+    background: linear-gradient(132.5deg, #63327d 41.09%, #000000 107.51%);
+    box-shadow: 0px 5px 26px rgba(0, 0, 0, 0.25);
+    border-bottom-right-radius: 90%;
+    position: relative;
+    width: 0;
+    height: 0;
+    transition: all 500ms ease;
+  }
+
+  &__hamb {
+    cursor: pointer;
+    margin: 0;
+    width: 2rem;
+    height: 1rem;
+    position: relative;
+    left: 1rem;
+    top: 1rem;
+    z-index: 10;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      height: 0.15rem;
+      -webkit-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+      background-color: #fff;
+    }
+
+    &::before {
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    &::after {
+      bottom: 0;
+      right: 0;
+      width: 100%;
+    }
+
+    & span {
+      position: absolute;
+      top: 6px;
+      width: 100%;
+      height: 2px;
+      transition: all ease 0.5s;
+      right: 0;
+      background-color: #fff;
+    }
+  }
+}

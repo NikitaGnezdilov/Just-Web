@@ -1,0 +1,28 @@
+.messageInput {
+  display: flex;
+  background: linear-gradient(131.34deg, #2e003d -30.29%, #63327d 45.76%);
+  padding: 1rem;
+  gap: 1rem;
+  button,
+  label {
+    cursor: pointer;
+    background: none;
+    width: 2rem;
+    height: 2rem;
+  }
+  img {
+    width: 80%;
+  }
+
+  &__type {
+    color: inherit;
+    background: transparent;
+    flex: 1 1 auto;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.815);
+  }
+
+  &__icons {
+    display: flex;
+    gap: 1rem;
+  }
+}

@@ -1,14 +1,13 @@
 import React from "react";
-import Chats from "../components/Chats/Chats";
+import Chat from "../components/Chat/Chat";
 import Sidebar from "../components/Sidebar/Sidebar";
 
-type Props = {};
 
-const Home: React.FC = (props: Props) => {
+const Home: React.FC = () => {
   return (
     <div className="homepage">
       <Sidebar />
-      <Chats />
+      <Chat />
     </div>
   );
 };
