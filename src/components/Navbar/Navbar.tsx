@@ -1,9 +1,14 @@
-import React from "react";
+import { signOut } from "firebase/auth";
+import React, { useContext } from "react";
+import { AuthContext } from "../../context/AuthConext";
+import { auth } from "../../firebase";
 import "./Navbar.scss";
 
 type Props = {};
 
 const Navbar = (props: Props) => {
+  const currentUser = useContext(AuthContext);
+
   return (
     <div className="navbar">
       <div className="navbar__moon">
@@ -16,6 +21,8 @@ const Navbar = (props: Props) => {
         <div className="navbar__mail"></div>
         <div className="navbar__profile"></div>
       </div>
+      
+      <button onClick={() => signOut(auth)}>Выйти</button>
     </div>
   );
 };

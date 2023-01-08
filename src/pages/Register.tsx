@@ -51,7 +51,7 @@ const Register: React.FC = (props: Props) => {
 
             await setDoc(doc(db,"usersChat", res.user.uid), {})
 
-            navigate('/')
+            navigate('/home')
 
           });
         }
